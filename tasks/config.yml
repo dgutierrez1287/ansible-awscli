@@ -1,0 +1,27 @@
+---
+
+## AWSCLI Config Tasks ##
+
+- name: Create AWSCli config dir
+  file:
+    path: "{{ awscli_user_home_dir }}/.aws"
+    state: directory
+    owner: "{{ awscli_user }}"
+    group: "{{ awscli_user }}"
+    mode: 0760
+
+- name: Place AWSCli config file
+  template:
+    src: config.j2
+    dest: "{{ awscli_user_home_dir }}/.aws/config"
+    owner: "{{ awscli_user }}"
+    group: "{{ awscli_user }}"
+    mode: 0760
+
+- name: Place AWSCli credentials file
+  template:
+    src: credentials.j2
+    dest: "{{ awscli_user_home_dir }}/.aws/credentials"
+    owner: "{{ awscli_user }}"
+    group: "{{ awscli_user }}"
+    mode: 0760

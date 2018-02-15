@@ -1,0 +1,8 @@
+---
+
+## AWSCLI Install Tasks ##
+
+- name: install awscli
+  pip:
+    name: awscli
+    state: present

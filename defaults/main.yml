@@ -1,0 +1,17 @@
+---
+
+## AWSCLI Default Variables ##
+
+# user and home directory
+awscli_user: root
+awscli_user_home_dir: /root
+
+# To configure profiles
+awscli_configure: no
+
+# awscli_profiles:
+#   <Profile Name>: 
+#     region: <value>
+#     output: <value>
+#     access_key: <value>
+#     secret_key: <value>

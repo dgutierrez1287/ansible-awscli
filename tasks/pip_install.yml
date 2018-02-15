@@ -1,0 +1,9 @@
+---
+
+## AWSCLI Pip Install Tasks ##
+
+- name: Install Pip
+  yum:
+    name: python-pip
+    state: present
+    

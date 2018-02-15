@@ -1,0 +1,21 @@
+---
+
+## AWSCLI Main ##
+
+- name: Test for Pip install
+  shell: "pip list"
+  register: pip_test
+  ignore_errors: yes
+
+- name: Install Pip
+  include: pip_install.yml
+  static: no
+  when: pip_test.rc != 0
+
+- name: Install aws-cli
+  include: install.yml
+
+- name: Configure aws-cli
+  include: config.yml
+  static: no
+  when: awscli_configure

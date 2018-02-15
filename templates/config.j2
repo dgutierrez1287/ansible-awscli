@@ -1,0 +1,6 @@
+{% for key, value in awscli_profiles.iteritems() %}
+[{{ key }}]
+output = {{ value.output }}
+region = {{ value.region }}
+
+{% endfor %}
